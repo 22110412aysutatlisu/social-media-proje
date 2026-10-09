@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Drive KKTC</title>
+    <!-- FontAwesome (İkonlar için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #1a2b49;
+            line-height: 1.6;
+        }
+
+        /* Üst Header / Kahraman Alanı */
+        .about-header {
+            background: linear-gradient(rgba(26, 43, 73, 0.8), rgba(26, 43, 73, 0.95)), url('images/girne1.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 120px 20px 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            backdrop-filter: blur(5px);
+        }
+
+        .back-btn:hover {
+            background: #0088cc;
+            transform: translateX(-5px);
+        }
+
+        .about-header h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .about-header p {
+            font-size: 19px;
+            color: #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Ana Kapsayıcı */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Hikayemiz / Tanıtım Bölümü */
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .intro-text h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a2b49;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .intro-text h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0088cc;
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .intro-text p {
+            color: #606f7b;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .intro-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* İstatistik Sayacı Alanı */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 80px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .stat-card i {
+            font-size: 40px;
+            color: #0088cc;
+            margin-bottom: 15px;
+        }
+
+        .stat-card h3 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a2b49;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #606f7b;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Vizyon & Misyon Kartları */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-top: 5px solid #0088cc;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 35px;
+            color: #0088cc;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            color: #1a2b49;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: #606f7b;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Bize Katılın Call-To-Action */
+        .cta-box {
+            background: linear-gradient(135deg, #1a2b49, #0f1c30);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(26,43,73,0.15);
+        }
+
+        .cta-box h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 136, 208, 0.4);
+        }
+
+        .cta-btn:hover {
+            background: #00b4db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 208, 0.6);
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-header h1 {
+                font-size: 34px;
+            }
+            .about-header p {
+                font-size: 16px;
+            }
+            .stats-grid {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Alanı -->
+    <header class="about-header">
+                                                  <div class="language">
+    <a href="index.html" class="active">TR</a>
+    <a href="en/index.html">EN</a>
+</div>
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön
+        </a>
+        <h1>Hakkımızda</h1>
+        <p>Kuzey Kıbrıs'ı keşfetmenin en akıllı, en keyifli ve en özgür yolu ile tanışın.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Giriş ve Hikaye -->
+        <section class="about-intro">
+            <div class="intro-text">
+                <h2>Drive KKTC Nedir?</h2>
+                <p>
+                    Drive KKTC, Kuzey Kıbrıs’ın eşsiz tarihi dokusunu, saklı kalmış doğa harikalarını, altın sarısı plajlarını ve binbir çeşit yerel lezzetlerini keşfetmek isteyen gezginler için tasarlanmış <strong>yeni nesil bir akıllı gezi rehberidir</strong>.
+                </p>
+                <p>
+                    Amacımız; adaya adım atan yerli ve yabancı tüm ziyaretçilere, kendi ilgi alanlarına ve ayırabilecekleri zamana en uygun seyahat planlarını sunarak özgürce, kaybolma endişesi taşımadan ve her anın tadını çıkararak seyahat etme imkanı tanımaktır.
+                </p>
+            </div>
+            <div class="intro-image">
+                <img src="images/y.jpg" alt="Drive KKTC Yolculuk">
+            </div>
+        </section>
+
+        <!-- İstatistikler -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <i class="fa-solid fa-route"></i>
+                <h3>25+</h3>
+                <p>Hazır Rota</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>100+</h3>
+                <p>Görülecek Yer</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-face-smile"></i>
+                <h3>%100</h3>
+                <p>Memnuniyet</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <h3>5 Bölge</h3>
+                <p>Tam Kapsama</p>
+            </div>
+        </section>
+
+        <!-- Değerlerimiz (Vizyon & Misyon) -->
+        <section class="values-grid">
+            <!-- Kart 1 -->
+            <div class="value-card">
+                <i class="fa-solid fa-compass"></i>
+                <h3>Misyonumuz</h3>
+                <p>Kuzey Kıbrıs’ın turizm potansiyelini dijital dünyanın gücüyle birleştirerek, gezginlere sıradan turların ötesinde, özgür ve tamamen kişiselleştirilmiş rota planları sunmak.</p>
+            </div>
+            <!-- Kart 2 -->
+            <div class="value-card">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Vizyonumuz</h3>
+                <p>Kuzey Kıbrıs denince akla gelen ilk ve en güvenilir dijital seyahat rehberi olmak; adanın kültürel, tarihi ve doğal mirasını küresel ölçekte en doğru şekilde tanıtmak.</p>
+            </div>
+            <!-- Kart 3 -->
+            <div class="value-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Değerlerimiz</h3>
+                <p>Kullanıcı dostu, güncel, doğru bilgi sunumu ve Kıbrıs'ın yerel kültürüne, doğasına ve tarihine duyulan derin saygı. Bizim için her yolculuk benzersiz bir hikayedir.</p>
+            </div>
+        </section>
+
+        <!-- Call-To-Action Bölümü -->
+        <section class="cta-box">
+            <h2>Kendi Maceranızı Başlatmaya Hazır Mısınız?</h2>
+            <p>Akıllı Rota Planlayıcımızı kullanarak ilgi alanlarınıza ve zamanınıza en uygun rotayı saniyeler içinde oluşturun ve yola çıkın!</p>
+            <a href="index.html#routes" class="cta-btn">
+                Rotaları Keşfet <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>
