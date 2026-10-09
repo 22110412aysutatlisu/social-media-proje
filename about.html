@@ -3,355 +3,986 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda - Drive KKTC</title>
-    <!-- FontAwesome (İkonlar için) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Hakkımızda | Woody Digital</title>
+    <meta name="description" content="Woody Digital hakkında bilgi alın.">
+    <meta name="keywords" content="Woody Digital, Hakkımızda">
+    <meta name="robots" content="index,follow">
+    <link class="canonical" href="https://www.woodydigital.com/about">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     
+    <!-- Google Fonts: Görseldeki Birebir Aynı Font (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animasyon Kütüphanesi CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
     <style>
+        /* Global Font Ayarı - Poppins Zorlaması */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif !important;
         }
 
-        body {
-            background-color: #f4f7f6;
-            color: #1a2b49;
-            line-height: 1.6;
+        /*=========================================
+                    HEADER & MENÜ STYLES
+        =========================================*/
+        /* En üstteki siyah iletişim barı */
+        .topbar{
+
+background:#0f172a;
+
+color:#fff;
+
+font-size:14px;
+
+}
+
+.topbar .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+height:48px;
+
+}
+
+.topbar__left{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.topbar__left a{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+opacity:.9;
+
+transition:.3s;
+
+}
+
+.topbar__left a:hover{
+
+opacity:1;
+
+color:#38bdf8;
+
+}
+
+.topbar__right{
+
+display:flex;
+
+gap:18px;
+
+}
+
+.topbar__right a{
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.topbar__right a:hover{
+
+color:#38bdf8;
+
+transform:translateY(-3px);
+
+}
+        /* Ana Menü Alanı */
+        .header {
+            background: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        /* Üst Header / Kahraman Alanı */
-        .about-header {
-            background: linear-gradient(rgba(26, 43, 73, 0.8), rgba(26, 43, 73, 0.95)), url('images/girne1.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 120px 20px 80px 20px;
-            text-align: center;
-            position: relative;
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .back-btn {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
+        /* LOGO STİLİ */
+        .logo {
+            font-size: 32px !important;
+            font-weight: 800 !important; 
+            color: #2b66ff !important;
+            text-decoration: none !important;
+            letter-spacing: -1.5px !important;
+            line-height: 1 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .logo span {
+            color: #091124 !important;
+            font-weight: 800 !important; 
+        }
+
+        .nav-menu {
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #091124;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-link:hover {
+            color: #2b66ff;
+        }
+
+        /* Aktif link (çizgi) tasarımı */
+        .nav-link.active {
+            color: #2b66ff;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background: #2b66ff;
+            border-radius: 4px;
+        }
+
+        /* DİL SEÇENEKLERİ */
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            color: #091124;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f4f7fe;
             transition: all 0.3s ease;
-            font-size: 14px;
-            backdrop-filter: blur(5px);
         }
 
-        .back-btn:hover {
-            background: #0088cc;
-            transform: translateX(-5px);
+        .lang-btn.active, .lang-btn:hover {
+            background: #eff6ff;
+            color: #2b66ff;
         }
 
-        .about-header h1 {
-            font-size: 46px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        /* TEKLİF AL BUTONU */
+        .header .btn-primary {
+            background: #2b66ff !important;
+            color: #fff !important;
+            padding: 14px 28px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            border: none !important;
+            box-shadow: 0 8px 20px rgba(43, 102, 255, 0.25) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header .btn-primary:hover {
+            background: #1a55eb !important;
+            transform: translateY(-1px);
         }
 
-        .about-header p {
-            font-size: 19px;
-            color: #e2e8f0;
-            max-width: 700px;
-            margin: 0 auto;
+        /*=========================================
+                    ABOUT SECTION STYLES
+        =========================================*/
+        .about {
+            padding: 130px 0;
+            background: #f8fbff;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Ana Kapsayıcı */
         .container {
-            max-width: 1100px;
-            margin: 60px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Hikayemiz / Tanıtım Bölümü */
-        .about-intro {
+        .about__wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 90px;
             align-items: center;
-            margin-bottom: 80px;
         }
 
-        .intro-text h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a2b49;
-            margin-bottom: 20px;
+        .about__right {
             position: relative;
         }
 
-        .intro-text h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #0088cc;
-            margin-top: 10px;
-            border-radius: 2px;
-        }
-
-        .intro-text p {
-            color: #606f7b;
-            font-size: 16px;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .intro-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .intro-image img {
+        .about__image img {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+            border-radius: 30px;
+            box-shadow: 0 35px 80px rgba(0,0,0,.08);
         }
 
-        .intro-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* İstatistik Sayacı Alanı */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+        .experience-box {
+            position: absolute;
+            top: 35px;
+            left: -35px;
+            background: white;
+            padding: 24px 28px;
+            border-radius: 20px;
+            box-shadow: 0 20px 45px rgba(0,0,0,.06);
             text-align: center;
-            margin-bottom: 80px;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            animation: floatCard 5s ease-in-out infinite;
         }
 
-        .stat-card i {
+        .project-box {
+            position: absolute;
+            right: -35px;
+            bottom: 35px;
+            background: white;
+            padding: 24px 28px;
+            border-radius: 20px;
+            box-shadow: 0 20px 45px rgba(0,0,0,.06);
+            text-align: center;
+            animation: floatCard 5s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .experience-box h3, .project-box h3 {
             font-size: 40px;
-            color: #0088cc;
-            margin-bottom: 15px;
-        }
-
-        .stat-card h3 {
-            font-size: 36px;
             font-weight: 800;
-            color: #1a2b49;
+            color: #2b66ff;
             margin-bottom: 5px;
+            margin-top: 0;
+            letter-spacing: -1px;
         }
 
-        .stat-card p {
-            color: #606f7b;
+        .experience-box span, .project-box span {
             font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
+            color: #64748b;
         }
 
-        /* Vizyon & Misyon Kartları */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+        .about__left h2 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin: 20px 0;
+            color: #091124; 
+            letter-spacing: -0.5px;
         }
 
-        .value-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border-top: 5px solid #0088cc;
-            transition: transform 0.3s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-card i {
-            font-size: 35px;
-            color: #0088cc;
-            margin-bottom: 20px;
-        }
-
-        .value-card h3 {
-            font-size: 22px;
-            color: #1a2b49;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .value-card p {
-            color: #606f7b;
-            font-size: 15px;
+        .about__left p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #5c677d; 
             line-height: 1.7;
         }
 
-        /* Bize Katılın Call-To-Action */
-        .cta-box {
-            background: linear-gradient(135deg, #1a2b49, #0f1c30);
-            color: white;
-            padding: 60px 40px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(26,43,73,0.15);
+        .about-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 35px 0;
         }
 
-        .cta-box h2 {
-            font-size: 30px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .cta-box p {
-            font-size: 16px;
-            color: #cbd5e1;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        .cta-btn {
-            display: inline-flex;
+        .about-item {
+            display: flex;
             align-items: center;
-            gap: 10px;
-            background: #0088cc;
-            color: white;
-            text-decoration: none;
-            padding: 14px 28px;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #091124;
+        }
+
+        .about-item svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            padding: 8px 18px;
+            background: #eff6ff;
+            color: #2b66ff;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .main-btn {
+            display: inline-block;
+            padding: 15px 35px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            background: #2b66ff;
+            color: white;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 136, 208, 0.4);
+            border: none;
         }
 
-        .cta-btn:hover {
-            background: #00b4db;
+        .main-btn:hover {
+            background: #1a55eb;
+            box-shadow: 0 10px 25px rgba(43, 102, 255, 0.25);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 136, 208, 0.6);
         }
 
-        /* Mobil Uyumluluk */
-        @media (max-width: 768px) {
-            .about-intro {
+        @keyframes floatCard {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        } 
+
+        /* Responsive */
+        @media(max-width:991px){
+            .topbar { display: none; }
+            .nav-menu, .lang-switch, .header .btn-primary { display: none; }
+            .about__wrapper {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 60px;
             }
-            .about-header h1 {
-                font-size: 34px;
+            .about__right { order: 2; }
+            .about__left { order: 1; text-align: center; }
+            .about-list {
+                grid-template-columns: 1fr;
+                text-align: left;
+                max-width: 400px;
+                margin: 35px auto;
             }
-            .about-header p {
-                font-size: 16px;
+            .experience-box { left: 10px; }
+            .project-box { right: 10px; }
+        }
+
+        @media(max-width:576px){
+            .about { padding: 80px 0; }
+            .about__left h2 { font-size: 32px; }
+            .experience-box, .project-box {
+                position: relative;
+                left: auto; right: auto; top: auto; bottom: auto;
+                margin: 20px auto;
+                max-width: 200px;
             }
-            .stats-grid {
-                padding: 20px;
+        }
+
+
+        /*==========================================
+                    ABOUT HERO
+        ==========================================*/
+        .about-hero{
+            padding:220px 0 140px;
+            background:linear-gradient(
+                180deg,
+                #f8fbff 0%,
+                #ffffff 100%
+            );
+            position:relative;
+            overflow:hidden;
+        }
+
+        .about-hero__content{
+            max-width:850px;
+            margin:auto;
+            text-align:center;
+            position:relative;
+            z-index:2;
+        }
+
+        .breadcrumb{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            margin-bottom:30px;
+            font-size:15px;
+            color:#05080b;
+        }
+
+        .breadcrumb a{
+            color:#a81d1d;
+        }
+
+        .about-hero h1{
+            font-size:72px;
+            line-height:1.1;
+            margin:30px 0;
+        }
+
+        .about-hero p{
+            font-size:22px;
+            line-height:1.8;
+            max-width:750px;
+            margin:auto;
+            color:#537094;
+        }
+
+        .about-hero__shape{
+            position:absolute;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:.25;
+        }
+
+        .shape-1{
+            width:350px;
+            height:350px;
+            background:#af0a0a;
+            top:-100px;
+            left:-100px;
+        }
+
+        .shape-2{
+            width:350px;
+            height:350px;
+            background:#af0a0a;
+            bottom:-100px;
+            right:-100px;
+        }
+
+        @media(max-width:992px){
+            .about-hero h1{
+                font-size:56px;
+            }
+        }
+
+        @media(max-width:768px){
+            .about-hero{
+                padding:180px 0 100px;
+            }
+            .about-hero h1{
+                font-size:42px;
+            }
+            .about-hero p{
+                font-size:18px;
+            }
+        }
+
+        @media(max-width:576px){
+            .about-hero h1{
+                font-size:34px;
+            }
+        }
+
+        /*==========================================
+                MISSION
+        ==========================================*/
+        .mission{
+            padding:130px 0;
+            background:#f8fbff;
+        }
+
+        .mission-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:40px;
+            margin-top:70px;
+        }
+
+        .mission-card{
+            background:rgba(255,255,255,.8);
+            backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+            padding:50px;
+            border-radius:30px;
+            border:1px solid rgba(37,99,235,.08);
+            transition:.4s ease;
+            box-shadow:0 20px 45px rgba(15,23,42,.05);
+        }
+
+        .mission-card:hover{
+            transform:translateY(-12px);
+            box-shadow:0 35px 70px rgba(37,99,235,.15);
+        }
+
+        .mission-icon{
+            width:90px;
+            height:90px;
+            border-radius:24px;
+            background:linear-gradient(135deg,#2563eb,#38bdf8);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:38px;
+            color:white;
+            margin-bottom:30px;
+        }
+
+        .mission-card h3{
+            font-size:34px;
+            margin-bottom:20px;
+        }
+
+        .mission-card p{
+            line-height:1.9;
+            color:#64748b;
+            margin-bottom:30px;
+        }
+
+        .mission-card ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+
+        .mission-card li{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:18px;
+            font-weight:600;
+        }
+
+        .mission-card li i{
+            color:#2563eb;
+            font-size:20px;
+        } 
+
+        @media(max-width:992px){
+            .mission-grid{
+                grid-template-columns:1fr;
+            }
+        }
+
+        @media(max-width:576px){
+            .mission{
+                padding:80px 0;
+            }
+            .mission-card{
+                padding:35px;
+            }
+            .mission-card h3{
+                font-size:28px;
+            }
+        }
+
+        /*==========================================
+                    TIMELINE
+        ==========================================*/
+        .timeline{
+            padding:130px 0;
+            background:#ffffff;
+            position:relative;
+        }
+
+        .timeline-wrapper{
+            position:relative;
+            max-width:1100px;
+            margin:80px auto 0;
+        }
+
+        .timeline-line{
+            position:absolute;
+            left:50%;
+            top:0;
+            width:4px;
+            height:100%;
+            background:linear-gradient(#2563eb,#38bdf8);
+            transform:translateX(-50%);
+            border-radius:20px;
+        }
+
+        .timeline-item{
+            position:relative;
+            width:50%;
+            padding:20px 50px;
+            margin-bottom:60px;
+        }
+
+        .timeline-item.left{
+            left:0;
+            text-align:right;
+        }
+
+        .timeline-item.right{
+            left:50%;
+        }
+
+        .timeline-content{
+            background:white;
+            padding:35px;
+            border-radius:24px;
+            box-shadow:0 20px 45px rgba(15,23,42,.08);
+            transition:.35s;
+            position:relative;
+        }
+
+        .timeline-content:hover{
+            transform:translateY(-10px);
+            box-shadow:0 35px 60px rgba(37,99,235,.12);
+        }
+
+        .timeline-year{
+            display:inline-block;
+            padding:8px 20px;
+            background:#2563eb;
+            color:white;
+            border-radius:999px;
+            font-size:14px;
+            font-weight:600;
+            margin-bottom:18px;
+        }
+
+        .timeline-content h3{
+            font-size:28px;
+            margin-bottom:15px;
+        }
+
+        .timeline-content p{
+            line-height:1.8;
+            color:#64748b;
+        }
+
+        .timeline-item::before{
+            content:"";
+            position:absolute;
+            top:45px;
+            width:20px;
+            height:20px;
+            background:#2563eb;
+            border:5px solid white;
+            border-radius:50%;
+            box-shadow:0 0 0 6px rgba(37,99,235,.15);
+            z-index:5;
+        }
+
+        .timeline-item.left::before{
+            right:-10px;
+        }
+
+        .timeline-item.right::before{
+            left:-10px;
+        }
+
+        @media(max-width:992px){
+            .timeline-line{
+                left:30px;
+            }
+            .timeline-item{
+                width:100%;
+                left:0!important;
+                padding-left:80px;
+                padding-right:20px;
+                text-align:left;
+            }
+            .timeline-item::before{
+                left:20px!important;
+            }
+        }
+
+        @media(max-width:576px){
+            .timeline{
+                padding:80px 0;
+            }
+            .timeline-content{
+                padding:25px;
+            }
+            .timeline-content h3{
+                font-size:22px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Alanı -->
-    <header class="about-header">
-                                                  <div class="language">
-    <a href="index.html" class="active">TR</a>
-    <a href="en/index.html">EN</a>
-</div>
-        <a href="index.html" class="back-btn">
-            <i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön
-        </a>
-        <h1>Hakkımızda</h1>
-        <p>Kuzey Kıbrıs'ı keşfetmenin en akıllı, en keyifli ve en özgür yolu ile tanışın.</p>
+    <!-- ÜST BİLGİ BARİ (Topbar) -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__info">
+                <a href="tel:+905555555555"><i class="ri-phone-fill"></i> +90 (555) 555 55 55</a>
+                <a href="mailto:info@woodydigital.com"><i class="ri-mail-fill"></i> info@woodydigital.com</a>
+            </div>
+            <div class="topbar__socials">
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-facebook-box-line"></i></a>
+                <a href="#"><i class="ri-linkedin-box-line"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANA MENÜ (Header) -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">Woody<span>Digital</span></a>
+            
+            <!-- Navigasyon Linkleri (Hizmetler linki services.html olarak güncellendi) -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="about.html" class="nav-link active">Hakkımızda</a></li>
+                <li><a href="services.html" class="nav-link">Hizmetler</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <!-- Dil Seçimi -->
+            <div class="lang-switch">
+                <a href="#" class="lang-btn active">TR</a>
+                <a href="#" class="lang-btn">EN</a>
+                <a href="#" class="lang-btn">RU</a>
+                <a href="#" class="lang-btn">AR</a>
+            </div>
+
+            <!-- Teklif Butonu -->
+            <a href="#" class="btn btn-primary">Ücretsiz Teklif Al</a>
+        </div>
     </header>
 
-    <main class="container">
-        
-        <!-- Giriş ve Hikaye -->
-        <section class="about-intro">
-            <div class="intro-text">
-                <h2>Drive KKTC Nedir?</h2>
-                <p>
-                    Drive KKTC, Kuzey Kıbrıs’ın eşsiz tarihi dokusunu, saklı kalmış doğa harikalarını, altın sarısı plajlarını ve binbir çeşit yerel lezzetlerini keşfetmek isteyen gezginler için tasarlanmış <strong>yeni nesil bir akıllı gezi rehberidir</strong>.
-                </p>
-                <p>
-                    Amacımız; adaya adım atan yerli ve yabancı tüm ziyaretçilere, kendi ilgi alanlarına ve ayırabilecekleri zamana en uygun seyahat planlarını sunarak özgürce, kaybolma endişesi taşımadan ve her anın tadını çıkararak seyahat etme imkanı tanımaktır.
-                </p>
+    <!-- HAKKIMIZDA İÇERİĞİ -->
+    <main>
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__wrapper">
+
+                    <!-- LEFT (Metinler solda) -->
+                    <div class="about__left" data-aos="fade-right">
+                        <span class="section-subtitle">WOODY HAKKINDA</span>
+
+                        <h2>
+                            Dijital Başarı İçin Strateji, Tasarım ve Performansı Bir Araya Getiriyoruz.
+                        </h2>
+
+                        <p>
+                            Woody Digital; SEO, Google Ads, Sosyal Medya Yönetimi ve Web Tasarım alanlarında işletmelere sürdürülebilir büyüme sağlayan tam hizmet dijital pazarlama ajansıdır.
+                        </p>
+
+                        <p>
+                            Her projeye veri odaklı yaklaşır, markanızın hedef kitlesine ulaşmasını sağlayacak özel stratejiler geliştiririz.
+                        </p>
+
+                        <div class="about-list">
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                SEO Uzmanlığı
+                            </div>
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                Google Ads Yönetimi
+                            </div>
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                Sosyal Medya Yönetimi
+                            </div>
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                Profesyonel Web Tasarımı
+                            </div>
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                Haftalık Raporlama
+                            </div>
+                            <div class="about-item">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4142 9.41421L11 15.8284L7.29289 12.1213C6.90237 11.7308 6.90237 11.0976 7.29289 10.7071C7.68342 10.3166 8.31658 10.3166 8.70711 10.7071L11 13L16 8C16.3905 7.60948 17.0237 7.60948 17.4142 8C17.8047 8.39052 17.8047 9.02369 17.4142 9.41421Z" fill="#22c55e"/></svg>
+                                7/24 Destek
+                            </div>
+                        </div>
+
+                        <a href="about.html" class="main-btn">Daha Fazla Bilgi</a>
+                    </div>
+
+                    <!-- RIGHT (Görsel ve Kutular sağda) -->
+                    <div class="about__right" data-aos="fade-left">
+                        <div class="about__image">
+                            <img src="images/woody.png" alt="Woody Dijital Pazarlama Ajansı"> 
+                        </div>
+
+                        <div class="experience-box">
+                            <h3>10+</h3>
+                            <span>Yıllık Deneyim</span>
+                        </div>
+
+                        <div class="project-box">
+                            <h3>500+</h3>
+                            <span>Tamamlanan Proje</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="intro-image">
-                <img src="images/y.jpg" alt="Drive KKTC Yolculuk">
+        </section> 
+
+        <!--==========================================
+                    ABOUT HERO
+        ===========================================-->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero__content">
+                    <div class="breadcrumb">
+                        <!-- Breadcrumb İçeriği -->
+                    </div> <!-- EKSİK OLAN KAPANIŞ ETİKETİ EKLENDİ -->
+                    
+                    <h1>
+                        Dijital Dönüşümün Gücünü<br>Markanızla Buluşturuyoruz
+                    </h1>
+
+                    <p>
+                        SEO, Google Ads, Web Tasarım ve Sosyal Medya Yönetimi alanlarında işletmelerin sürdürülebilir büyümesine katkı sağlıyoruz.
+                    </p>
+                </div>
             </div>
+
+            <div class="about-hero__shape shape-1"></div>
+            <div class="about-hero__shape shape-2"></div>
         </section>
 
-        <!-- İstatistikler -->
-        <section class="stats-grid">
-            <div class="stat-card">
-                <i class="fa-solid fa-route"></i>
-                <h3>25+</h3>
-                <p>Hazır Rota</p>
-            </div>
-            <div class="stat-card">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <h3>100+</h3>
-                <p>Görülecek Yer</p>
-            </div>
-            <div class="stat-card">
-                <i class="fa-solid fa-face-smile"></i>
-                <h3>%100</h3>
-                <p>Memnuniyet</p>
-            </div>
-            <div class="stat-card">
-                <i class="fa-solid fa-umbrella-beach"></i>
-                <h3>5 Bölge</h3>
-                <p>Tam Kapsama</p>
-            </div>
-        </section>
+        <!--==========================================
+                    MISSION & VISION
+        ===========================================-->
+        <section class="mission">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Geleceğe Bakış</span>
+                    <h2>Misyonumuz ve Vizyonumuz</h2>
+                    <p>
+                        İşletmelerin dijital dünyada sürdürülebilir başarı elde etmesini sağlayacak çözümler geliştiriyoruz.
+                    </p>
+                </div>
 
-        <!-- Değerlerimiz (Vizyon & Misyon) -->
-        <section class="values-grid">
-            <!-- Kart 1 -->
-            <div class="value-card">
-                <i class="fa-solid fa-compass"></i>
-                <h3>Misyonumuz</h3>
-                <p>Kuzey Kıbrıs’ın turizm potansiyelini dijital dünyanın gücüyle birleştirerek, gezginlere sıradan turların ötesinde, özgür ve tamamen kişiselleştirilmiş rota planları sunmak.</p>
-            </div>
-            <!-- Kart 2 -->
-            <div class="value-card">
-                <i class="fa-solid fa-eye"></i>
-                <h3>Vizyonumuz</h3>
-                <p>Kuzey Kıbrıs denince akla gelen ilk ve en güvenilir dijital seyahat rehberi olmak; adanın kültürel, tarihi ve doğal mirasını küresel ölçekte en doğru şekilde tanıtmak.</p>
-            </div>
-            <!-- Kart 3 -->
-            <div class="value-card">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Değerlerimiz</h3>
-                <p>Kullanıcı dostu, güncel, doğru bilgi sunumu ve Kıbrıs'ın yerel kültürüne, doğasına ve tarihine duyulan derin saygı. Bizim için her yolculuk benzersiz bir hikayedir.</p>
-            </div>
-        </section>
+                <div class="mission-grid">
+                    <!-- Mission -->
+                    <article class="mission-card" data-aos="fade-right">
+                        <div class="mission-icon">
+                            <i class="ri-rocket-2-fill"></i>
+                        </div>
+                        <h3>Misyonumuz</h3>
+                        <p>
+                            İşletmelerin dijital dünyada büyümesini sağlayan, veri odaklı, yaratıcı ve sürdürülebilir pazarlama çözümleri üretmek.
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> SEO Odaklı Yaklaşım</li>
+                            <li><i class="ri-check-line"></i> Performans Pazarlaması</li>
+                            <li><i class="ri-check-line"></i> Ölçülebilir Sonuçlar</li>
+                        </ul>
+                    </article>
 
-        <!-- Call-To-Action Bölümü -->
-        <section class="cta-box">
-            <h2>Kendi Maceranızı Başlatmaya Hazır Mısınız?</h2>
-            <p>Akıllı Rota Planlayıcımızı kullanarak ilgi alanlarınıza ve zamanınıza en uygun rotayı saniyeler içinde oluşturun ve yola çıkın!</p>
-            <a href="index.html#routes" class="cta-btn">
-                Rotaları Keşfet <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </section>
+                    <!-- Vision -->
+                    <article class="mission-card" data-aos="fade-left">
+                        <div class="mission-icon">
+                            <i class="ri-eye-2-fill"></i>
+                        </div>
+                        <h3>Vizyonumuz</h3>
+                        <p>
+                            Türkiye'nin ve Avrupa'nın en güvenilir dijital pazarlama ajanslarından biri olmak ve markaların küresel ölçekte büyümesine katkı sağlamak.
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Global Marka Oluşturmak</li>
+                            <li><i class="ri-check-line"></i> Sürekli Yenilik</li>
+                            <li><i class="ri-check-line"></i> Uzun Vadeli İş Ortaklığı</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section> 
 
+        <!--==========================================
+                    COMPANY TIMELINE
+        ===========================================-->
+        <section class="timeline">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Yolculuğumuz</span>
+                    <h2>Woody Digital'in Gelişim Hikayesi</h2>
+                    <p>Kurulduğumuz günden bugüne kadar attığımız önemli adımlar.</p>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+
+                    <!-- 2016 -->
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2016</span>
+                            <h3>Woody Digital Kuruldu</h3>
+                            <p>Dijital pazarlama alanında yenilikçi çözümler sunmak amacıyla faaliyetlerimize başladık.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2018 -->
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2018</span>
+                            <h3>İlk 100 Müşteri</h3>
+                            <p>KOBİ'lerden kurumsal firmalara kadar birçok markayla çalışmaya başladık.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2021</span>
+                            <h3>Performans Pazarlamasına Geçiş</h3>
+                            <p>SEO, Google Ads ve veri odaklı pazarlama süreçlerini ajans yapımıza entegre ettik.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2024</span>
+                            <h3>500+ Başarılı Proje</h3>
+                            <p>Farklı sektörlerde yüzlerce dijital dönüşüm projesini başarıyla tamamladık.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2026</span>
+                            <h3>Uluslararası Hizmet Ağı</h3>
+                            <p>Türkiye'nin yanı sıra Avrupa ve Orta Doğu'daki markalara dijital pazarlama hizmeti sunmaya başladık.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
     </main>
 
+    <!-- JS Bağlantıları -->
+    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>

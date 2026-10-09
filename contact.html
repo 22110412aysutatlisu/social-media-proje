@@ -3,425 +3,1004 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - Drive KKTC</title>
-    <!-- FontAwesome (İkonlar için) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>İletişim | Woody Digital</title>
+    <meta name="description" content="Woody Digital ile iletişime geçin.">
+    <meta name="keywords" content="Woody Digital, İletişim">
+    <meta name="robots" content="index,follow">
+    <link class="canonical" href="https://www.woodydigital.com/contact">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animasyon Kütüphanesi CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
     <style>
+        /* Global Font Ayarı */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif !important;
         }
 
-        body {
-            background-color: #f4f7f6;
-            color: #1a2b49;
-            line-height: 1.6;
+        /*=========================================
+                    HEADER & MENÜ STYLES
+        =========================================*/
+        .topbar {
+            background: #060f22;
+            color: #fff;
+            padding: 12px 0;
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        /* Üst Header / Kahraman Alanı */
-        .contact-header {
-            background: linear-gradient(rgba(26, 43, 73, 0.8), rgba(26, 43, 73, 0.95)), url('images/KARPAZ.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 120px 20px 80px 20px;
-            text-align: center;
-            position: relative;
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .back-btn {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            color: white;
+        .topbar__info {
+            display: flex;
+            gap: 25px;
+        }
+
+        .topbar__info a {
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            backdrop-filter: blur(5px);
+            transition: color 0.3s;
         }
 
-        .back-btn:hover {
-            background: #0088cc;
-            transform: translateX(-5px);
+        .topbar__info a:hover {
+            color: #2b66ff;
         }
 
-        .contact-header h1 {
-            font-size: 46px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .contact-header p {
-            font-size: 19px;
-            color: #e2e8f0;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Ana İçerik Grid Yapısı */
-        .container {
-            max-width: 1100px;
-            margin: -40px auto 60px auto; /* Header'ın üzerine hafifçe taşan şık kutu düzeni */
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1.2fr 1.8fr;
-            gap: 40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Sol Kolon: İletişim Bilgileri */
-        .contact-info-card {
-            background: #1a2b49;
-            color: white;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(26,43,73,0.15);
+        .topbar__socials {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            gap: 18px;
         }
 
-        .info-header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .info-header p {
-            color: #cbd5e1;
+        .topbar__socials a {
+            color: rgba(255, 255, 255, 0.9);
             font-size: 15px;
-            margin-bottom: 35px;
+            transition: color 0.3s;
         }
 
-        .info-list {
+        .topbar__socials a:hover {
+            color: #2b66ff;
+        }
+
+        /* Ana Menü Alanı */
+        .header {
+            background: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO STİLİ */
+        .logo {
+            font-size: 32px !important;
+            font-weight: 800 !important; 
+            color: #2b66ff !important;
+            text-decoration: none !important;
+            letter-spacing: -1.5px !important;
+            line-height: 1 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .logo span {
+            color: #091124 !important;
+            font-weight: 800 !important; 
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
             list-style: none;
         }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .info-item i {
-            font-size: 20px;
-            color: #0088cc;
-            background: rgba(0, 136, 208, 0.15);
-            padding: 12px;
-            border-radius: 12px;
-        }
-
-        .info-details h4 {
-            font-size: 16px;
+        /* Sınıf adı HTML ile uyumlu hale getirildi: .nav__link */
+        .nav__link {
+            color: #091124;
+            text-decoration: none;
             font-weight: 600;
-            margin-bottom: 2px;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
         }
 
-        .info-details p {
-            color: #94a3b8;
-            font-size: 14px;
+        .nav__link:hover {
+            color: #2b66ff;
         }
 
-        /* Sosyal Medya İkonları */
-        .social-links {
+        /* Aktif link tasarımı düzeltildi */
+        .nav__link.active {
+            color: #2b66ff;
+        }
+
+        .nav__link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background: #2b66ff;
+            border-radius: 4px;
+        }
+
+        /* DİL SEÇENEKLERİ */
+        .language {
             display: flex;
-            gap: 15px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 10px;
+            align-items: center;
         }
 
-        .social-icon {
-            color: white;
-            background: rgba(255, 255, 255, 0.08);
-            width: 45px;
-            height: 45px;
+        .language a {
+            color: #091124;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f4f7fe;
+            transition: all 0.3s ease;
+        }
+
+        .language a:hover {
+            background: #eff6ff;
+            color: #2b66ff;
+        }
+
+        /* TEKLİF AL BUTONU */
+        .header .btn-primary {
+            background: #2b66ff !important;
+            color: #fff !important;
+            padding: 14px 28px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            border: none !important;
+            box-shadow: 0 8px 20px rgba(43, 102, 255, 0.25) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header .btn-primary:hover {
+            background: #1a55eb !important;
+            transform: translateY(-1px);
+        }
+
+        .header__actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /*==========================================
+                    CONTACT HERO
+        ==========================================*/
+        .contact-hero {
+            padding: 220px 0 130px;
+            text-align: center;
+            background: linear-gradient(180deg, #78a7e5, white);
+        } 
+
+        .contact-hero h1 {
+            font-size: 68px;
+            line-height: 1.1;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .contact-hero p {
+            max-width: 760px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.9;
+            color: #64748b;
+        }
+
+        @media(max-width:768px) {
+            .contact-hero { padding: 180px 0 90px; }
+            .contact-hero h1 { font-size: 42px; }
+            .contact-hero p { font-size: 18px; }
+            .menu-toggle { display: block; }
+            .nav { display: none; }
+        }
+
+        /*==========================================
+                    CONTACT INFO
+        ==========================================*/
+        .contact-info {
+            padding: 120px 0;
+            background: #f8fbff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 70px;
+        }
+
+        .contact-card {
+            background: #fff;
+            padding: 45px 35px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(15,23,42,.06);
+            transition: .4s;
+            border: 1px solid #eef2f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 70px rgba(37,99,235,.15);
+        }
+
+        .contact-icon {
+            width: 90px;
+            height: 90px;
+            margin: auto;
+            margin-bottom: 25px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            background: linear-gradient(135deg,#2563eb,#3b82f6);
+            color: white;
+            font-size: 36px;
+            transition: .5s;
         }
 
-        .social-icon:hover {
-            background: #0088cc;
-            transform: translateY(-3px);
+        .contact-card:hover .contact-icon {
+            transform: rotate(12deg) scale(1.1);
         }
 
-        /* Sağ Kolon: İletişim Formu */
-        .contact-form-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        }
-
-        .contact-form-card h2 {
+        .contact-card h3 {
             font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            position: relative;
+            margin-bottom: 15px;
         }
 
-        .contact-form-card h2::after {
-            content: '';
+        .contact-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-block;
+            font-weight: 600;
+            color: #2563eb;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .contact-card a:hover {
+            letter-spacing: .5px;
+        }
+
+        .contact-card span {
             display: block;
-            width: 50px;
-            height: 4px;
-            background: #0088cc;
-            margin-top: 8px;
-            border-radius: 2px;
+            margin-top: 20px;
+            color: #16a34a;
+            font-weight: 600;
+        }
+
+        @media(max-width: 1100px) {
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media(max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-info { padding: 80px 0; }
+            .contact-card { padding: 35px 25px; }
+            .contact-card h3 { font-size: 24px; }
+        }
+
+        .contact-card::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(37,99,235,.08);
+            border-radius: 50%;
+            top: -120px;
+            right: -120px;
+            transition: .5s;
+        }
+
+        .contact-card:hover::before {
+            transform: scale(1.4);
+        }
+
+        /*==========================================
+                    CONTACT FORM
+        ==========================================*/
+        .contact-form-section {
+            padding: 130px 0;
+            background: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-left h2 {
+            font-size: 54px;
+            margin: 25px 0;
+            line-height: 1.15;
+        }
+
+        .contact-left p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #64748b;
+            margin-bottom: 35px;
+        }
+
+        .contact-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-feature i {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .contact-form-box {
+            background: white;
+            padding: 45px;
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(15,23,42,.08);
+            border: 1px solid #eef2f7;
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
+            margin-bottom: 25px;
         }
 
         .form-group label {
-            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
             font-weight: 600;
-            color: #4a5568;
         }
 
-        .form-group input, 
+        .form-group input,
+        .form-group select,
         .form-group textarea {
-            padding: 14px 18px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            color: #1a2b49;
-            background-color: #f8fafc;
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #0088cc;
-            background-color: white;
-            box-shadow: 0 0 0 4px rgba(0, 136, 208, 0.1);
-        }
-
-        .submit-btn {
-            background: #0088cc;
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 136, 208, 0.3);
-        }
-
-        .submit-btn:hover {
-            background: #00b4db;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 136, 208, 0.5);
-        }
-
-        /* Alt Kısım: İnteraktif Harita */
-        .map-section {
-            max-width: 1100px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-
-        .map-container {
-            height: 400px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        }
-
-        .map-container iframe {
             width: 100%;
-            height: 100%;
-            border: 0;
+            padding: 16px 18px;
+            border: 1px solid #dbe4ef;
+            border-radius: 16px;
+            font-size: 16px;
+            outline: none;
+            transition: .3s;
+            font-family: inherit;
         }
 
-        /* Mobil Uyumluluk */
-        @media (max-width: 900px) {
-            .container {
-                grid-template-columns: 1fr;
-                margin-top: 20px;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.10);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 25px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .contact-form-box button {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+        }
+
+        @media(max-width: 992px) {
+            .contact-wrapper { grid-template-columns: 1fr; gap: 50px; }
+        }
+
+        @media(max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .contact-left h2 { font-size: 40px; }
+            .contact-form-box { padding: 30px; }
+        }
+
+        /*==========================================
+                    GOOGLE MAP
+        ==========================================*/
+
+        .contact-map{
+            padding:130px 0;
+            background:#f8fbff;
+        }
+
+        .map-wrapper{
+            margin-top:70px;
+            display:grid;
+            grid-template-columns:2fr 1fr;
+            gap:40px;
+            align-items:start;
+        }
+
+        .map-frame{
+            height:600px;
+            border-radius:30px;
+            overflow:hidden;
+            box-shadow:0 30px 70px rgba(15,23,42,.08);
+        }
+
+        .map-frame iframe{
+            width:100%;
+            height:100%;
+            border:none;
+        }
+
+        .office-card{
+            background:white;
+            padding:40px;
+            border-radius:30px;
+            box-shadow:0 20px 50px rgba(15,23,42,.08);
+            position:sticky;
+            top:120px;
+        }
+
+        .office-card h3{
+            font-size:32px;
+            margin-bottom:30px;
+        }
+
+        .office-card p{
+            margin-bottom:20px;
+            line-height:1.8;
+            color:#64748b;
+        }
+
+        .office-card .btn{
+            margin-top:20px;
+            width:100%;
+        }
+
+        @media(max-width:992px){
+            .map-wrapper{
+                grid-template-columns:1fr;
             }
-            .form-grid {
-                grid-template-columns: 1fr;
+            .office-card{
+                position:static;
             }
-            .form-group.full-width {
-                grid-column: span 1;
+        }
+
+        @media(max-width:768px){
+            .contact-map{
+                padding:80px 0;
             }
-            .contact-header h1 {
-                font-size: 34px;
+            .map-frame{
+                height:400px;
             }
+        }
+
+        .office-features{
+            margin-top:30px;
+            display:grid;
+            gap:15px;
+        }
+
+        .office-features div{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            font-weight:600;
+        }
+
+        .office-features i{
+            color:#2563eb;
+            font-size:22px;
+        }
+
+        /*==========================================
+                    CONTACT FAQ
+        ==========================================*/
+
+        .contact-faq{
+            padding:130px 0;
+            background:#ffffff;
+        }
+
+        .contact-faq-wrapper{
+            max-width:950px;
+            margin:70px auto 0;
+        }
+
+        .contact-faq-item{
+            background:#fff;
+            border:1px solid #e2e8f0;
+            border-radius:24px;
+            margin-bottom:20px;
+            overflow:hidden;
+            box-shadow:0 15px 40px rgba(15,23,42,.05);
+            transition:.35s;
+        }
+
+        .contact-faq-item:hover{
+            transform:translateY(-4px);
+            box-shadow:0 25px 55px rgba(37,99,235,.10);
+        }
+
+        .contact-faq-question{
+            width:100%;
+            background:none;
+            border:none;
+            padding:30px 35px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            cursor:pointer;
+            font-size:20px;
+            font-weight:600;
+            text-align:left;
+        }
+
+        .contact-faq-question i{
+            font-size:28px;
+            transition:.35s;
+        }
+
+        .contact-faq-answer{
+            max-height:0;
+            overflow:hidden;
+            transition:max-height .4s ease;
+        }
+
+        .contact-faq-answer p{
+            padding:0 35px 30px;
+            line-height:1.9;
+            color:#64748b;
+        }
+
+        .contact-faq-item.active .contact-faq-answer{
+            max-height:300px;
+        }
+
+        .contact-faq-item.active .contact-faq-question i{
+            transform:rotate(45deg);
+            color:#2563eb;
+        }
+
+        /*==========================================
+                    CONTACT CTA
+        ==========================================*/
+
+        .contact-cta{
+            padding:140px 0;
+            text-align:center;
+            background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+            color:#fff;
+        }
+
+        .contact-cta-content{
+            max-width:850px;
+            margin:auto;
+        }
+
+        .contact-cta h2{
+            font-size:60px;
+            line-height:1.15;
+            margin:25px 0;
+        }
+
+        .contact-cta p{
+            max-width:700px;
+            margin:0 auto 40px;
+            font-size:20px;
+            line-height:1.8;
+            opacity:.9;
+        }
+
+        .contact-cta-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .contact-cta .btn-outline{
+            border:2px solid #fff;
+            color:#fff;
+        }
+
+        .contact-cta .btn-outline:hover{
+            background:#fff;
+            color:#2563eb;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Karşılama Alanı -->
-    <header class="contact-header">
-                                                <div class="language">
-    <a href="contact.html" class="active">TR</a>
-    <!-- Direkt en klasörünün altındaki contact.html'e yönlendirir -->
-    <a href="en/contact.html">EN</a>
-</div>
-        <a href="index.html" class="back-btn">
-            <i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön
-        </a>
-        <h1>Bizimle İletişime Geçin</h1>
-        <p>Görüşleriniz, önerileriniz veya iş birliği teklifleriniz için mesaj atın; ekibimiz size en kısa sürede dönüş sağlayacaktır.</p>
+    <!-- ÜST BİLGİ BARI (Topbar) -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__info">
+                <a href="tel:+905555555555"><i class="ri-phone-fill"></i> +90 (555) 555 55 55</a>
+                <a href="mailto:info@woodydigital.com"><i class="ri-mail-fill"></i> info@woodydigital.com</a>
+            </div>
+            <div class="topbar__socials">
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-facebook-box-line"></i></a>
+                <a href="#"><i class="ri-linkedin-box-line"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANA HEADER ALANI -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span>Woody</span>Digital
+            </a>
+
+            <!-- MENÜ - Aktif class İletişim'e taşındı -->
+            <nav class="nav">
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Ana Sayfa</a></li>
+                    <li><a href="about.html" class="nav__link">Hakkımızda</a></li>
+                    <li><a href="services.html" class="nav__link">Hizmetler</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link active">İletişim</a></li>
+                </ul>
+            </nav>
+
+            <!-- Sağ Taraf -->
+            <div class="header__actions">
+                <div class="language">
+                    <a href="/">TR</a>
+                    <a href="/en/">EN</a>
+                    <a href="/ru/">RU</a>
+                    <a href="/ar/">AR</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Ücretsiz Teklif Al</a>
+                <!-- Mobil -->
+                <button class="menu-toggle" aria-label="Menüyü Aç">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <!-- Ana İletişim Formu ve Bilgileri -->
-    <main class="container">
-        
-        <!-- Sol Taraf: İletişim Bilgileri Kartı -->
-        <section class="contact-info-card">
-            <div class="info-header">
-                <h2>İrtibat Bilgileri</h2>
-                <p>Kıbrıs seyahatinizi kolaylaştırmak için buradayız. Sosyal medya hesaplarımızdan da bize 7/24 ulaşabilirsiniz.</p>
-                
-                <ul class="info-list">
-                    <li class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="info-details">
-                            <h4>Ofisimiz</h4>
-                            <p>Zehra Sokak No:12, Surlariçi / Lefkoşa</p>
-                        </div>
-                    </li>
-                    <li class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <div class="info-details">
-                            <h4>Telefon</h4>
-                            <p>+90 (392) 123 45 67</p>
-                        </div>
-                    </li>
-                    <li class="info-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div class="info-details">
-                            <h4>E-Posta</h4>
-                            <p>info@drivekktc.com</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Sosyal Medya -->
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+    <main>
+        <!-- CONTACT HERO -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Hayalinizdeki Dijital Projeyi Birlikte Hayata Geçirelim</h1>
+                <p>SEO, Web Tasarım, Google Ads ve Dijital Pazarlama hizmetlerimiz hakkında bilgi almak veya ücretsiz teklif istemek için bizimle iletişime geçin.</p>
             </div>
         </section>
 
-        <!-- Sağ Taraf: İletişim Formu Kartı -->
-        <section class="contact-form-card">
-            <h2>Mesaj Gönderin</h2>
-            <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="fullName">Adınız Soyadınız</label>
-                        <input type="text" id="fullName" placeholder="Örn. Ahmet Yılmaz" required>
+        <!-- CONTACT INFO -->
+        <section class="contact-info">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                    <span class="section-tag">Bize Ulaşın</span>
+                    <h2>Size Yardımcı Olmaya Hazırız</h2>
+                    <p>Sorularınız, proje talepleriniz veya iş birliği teklifleriniz için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Telefon -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="ri-phone-fill"></i></div>
+                        <h3>Telefon</h3>
+                        <p>+90 (555) 555 55 55</p>
+                        <a href="tel:+905555555555">Hemen Ara</a>
                     </div>
-                    <div class="form-group">
-                        <label for="email">E-Posta Adresiniz</label>
-                        <input type="email" id="email" placeholder="orn@mail.com" required>
+                    <!-- Mail -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="ri-mail-fill"></i></div>
+                        <h3>E-Posta</h3>
+                        <p>info@woodydigital.com</p>
+                        <a href="mailto:info@woodydigital.com">Mail Gönder</a>
                     </div>
-                    <div class="form-group full-width">
-                        <label for="subject">Konu</label>
-                        <input type="text" id="subject" placeholder="Hangi konuda yazıyorsunuz?" required>
+                    <!-- Ofis -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="ri-map-pin-2-fill"></i></div>
+                        <h3>Ofis</h3>
+                        <p>Kıbrıs / Lefkoşa</p>
+                        <a href="#map">Haritada Gör</a>
                     </div>
-                    <div class="form-group full-width">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    <!-- Saat -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="ri-time-fill"></i></div>
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Pazartesi - Cuma<br>09:00 - 18:00</p>
+                        <span>Hafta Sonu Kapalı</span>
                     </div>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    Mesajı Gönder <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
+            </div>
         </section>
 
+        <!-- CONTACT FORM -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <!-- Sol Taraf -->
+                    <div class="contact-left">
+                        <span class="section-tag">Ücretsiz Teklif</span>
+                        <h2>Projenizi Birlikte Konuşalım</h2>
+                        <p>İşletmeniz için en uygun dijital çözümleri birlikte planlayalım. Formu doldurun, ekibimiz en kısa sürede sizinle iletişime geçsin.</p>
+                        <div class="contact-feature"><i class="ri-check-line"></i><span>24 Saat İçinde Geri Dönüş</span></div>
+                        <div class="contact-feature"><i class="ri-check-line"></i><span>Ücretsiz Ön Analiz</span></div>
+                        <div class="contact-feature"><i class="ri-check-line"></i><span>Şeffaf Fiyatlandırma</span></div>
+                    </div>
+
+                    <!-- Sağ Taraf -->
+                    <div class="contact-form-box">
+                        <form id="contactForm" action="contact.php" method="POST">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Ad Soyad</label>
+                                    <input type="text" id="name" name="name" placeholder="Adınızı giriniz" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Firma</label>
+                                    <input type="text" name="company" placeholder="Firma Adı">
+                                </div>
+                                <div class="form-group">
+                                    <label>E-Posta</label>
+                                    <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefon</label>
+                                    <input type="tel" name="phone" placeholder="+90">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>İlgilendiğiniz Hizmet</label>
+                                <select name="service">
+                                    <option>SEO</option>
+                                    <option>Web Tasarım</option>
+                                    <option>Google Ads</option>
+                                    <option>Sosyal Medya</option>
+                                    <option>Branding</option>
+                                    <option>Yazılım</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Proje Bütçesi</label>
+                                <select name="budget">
+                                    <option>20.000 TL Altı</option>
+                                    <option>20.000 - 50.000 TL</option>
+                                    <option>50.000 - 100.000 TL</option>
+                                    <option>100.000 TL +</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Mesajınız</label>
+                                <textarea name="message" rows="6" placeholder="Projeniz hakkında bilgi veriniz..."></textarea>
+                            </div>
+                            <label class="checkbox">
+                                <input type="checkbox" required>
+                                KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum.
+                            </label>
+                            <button class="header .btn-primary" type="submit" style="cursor:pointer;">Teklif Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!--==========================================
+                    GOOGLE MAP
+        ===========================================-->
+
+        <section class="contact-map" id="map">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Ofisimiz</span>
+                    <h2>Bizi Ziyaret Edin</h2>
+                    <p>Projenizi yüz yüze görüşmek isterseniz sizi ofisimizde ağırlamaktan memnuniyet duyarız.</p>
+                </div>
+
+                <div class="map-wrapper">
+                    <div class="map-frame">
+                        <iframe
+                            src="https://www.google.com/maps?q=Lefkoşa,Kıbrıs&output=embed"
+                            loading="lazy"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="office-card">
+                        <h3>Woody Digital</h3>
+                        <p>📍 Kıbrıs / Lefkoşa</p>
+                        <p>📞 +90 (555) 555 55 55</p>
+                        <p>📧 info@woodydigital.com</p>
+                        <p>🕐 Pazartesi - Cuma<br>09:00 - 18:00</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary">Yol Tarifi Al</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==========================================
+                    CONTACT FAQ
+        ===========================================-->
+
+        <section class="contact-faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Sık Sorulan Sorular</span>
+                    <h2>İletişim Süreci Hakkında Merak Ettikleriniz</h2>
+                    <p>Teklif süreci, proje başlangıcı ve çalışma modelimiz hakkında en sık sorulan soruları sizin için cevapladık.</p>
+                </div>
+
+                <div class="contact-faq-wrapper">
+                    <div class="contact-faq-item active">
+                        <button class="contact-faq-question">
+                            Teklif talebime ne kadar sürede dönüş yapıyorsunuz?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="contact-faq-answer">
+                            <p>Tüm teklif taleplerine ortalama 24 saat içerisinde dönüş yapıyoruz.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-faq-item">
+                        <button class="contact-faq-question">
+                            İlk görüşme ücretli mi?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="contact-faq-answer">
+                            <p>Hayır. İlk analiz ve danışmanlık görüşmesi tamamen ücretsizdir.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-faq-item">
+                        <button class="contact-faq-question">
+                            Türkiye dışındaki firmalarla çalışıyor musunuz?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="contact-faq-answer">
+                            <p>Evet. Avrupa, Orta Doğu ve diğer ülkelerdeki müşterilerimize uzaktan hizmet sunuyoruz.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-faq-item">
+                        <button class="contact-faq-question">
+                            Proje başladıktan sonra destek veriyor musunuz?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="contact-faq-answer">
+                            <p>Evet. Yayına alınan tüm projeler için bakım, güncelleme ve teknik destek hizmetimiz devam etmektedir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-cta">
+            <div class="container">
+                <div class="contact-cta-content">
+                    <h2>Dijital Başarı Yolculuğunuz Bugün Başlayın</h2>
+                    <p>Web tasarım, SEO, Google Ads ve dijital pazarlama çözümlerimizle markanızı birlikte büyütelim.</p>
+                    <div class="contact-cta-buttons">
+                        <a href="tel:+905555555555" class="btn btn-primary">Hemen Ara</a>
+                        <a href="mailto:info@woodydigital.com" class="btn btn-outline">E-Posta Gönder</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="office-features">
+            <div><i class="ri-car-line"></i> Ücretsiz Otopark</div>
+            <div><i class="ri-subway-line"></i> Durağa 3 dk</div>
+            <div><i class="ri-cup-line"></i> Ücretsiz Kahve</div>
+        </div>
     </main>
 
-    <!-- Alt Kısım: İnteraktif Harita (Lefkoşa Surlariçi için gerçekçi bir konum) -->
-    <section class="map-section">
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.2720235334233!2d33.359218699999995!3d35.174783300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1758c0c98f9d%3s0x14de175865e90547!2sZehra%20Sokak%2c%20Lefko%c5%9fa!5e0!3m2!1str!2s!4v1721054321234!5m2!1str!2s" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </section>
-
-    <!-- Küçük JavaScript: Form Başarıyla Gönderildi Efekti -->
+    <script src="js/script.js"></script>
     <script>
-        function handleFormSubmit(event) {
-            event.preventDefault(); // Sayfa yenilenmesini engeller.
-            
-            const btn = document.getElementById('submitBtn');
-            const originalText = btn.innerHTML;
-            
-            // Butonu gönderiliyor durumuna getirelim
-            btn.innerHTML = 'Gönderiliyor... <i class="fa-solid fa-spinner fa-spin"></i>';
-            btn.style.background = '#1a2b49';
-            btn.disabled = true;
+        /* CONTACT FORM VALIDATION */
+        const contactForm = document.getElementById("contactForm");
+        if(contactForm){
+            contactForm.addEventListener("submit", function(e){
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
 
-            setTimeout(() => {
-                // Başarılı uyarısı
-                btn.innerHTML = 'Mesajınız Alındı! <i class="fa-solid fa-check"></i>';
-                btn.style.background = '#2e7559'; // Şık yeşil renk
-                
-                // Formu temizle
-                document.getElementById('contactForm').reset();
+                if(name === "" || email === ""){
+                    e.preventDefault(); // Yalnızca hatalıysa formu durdur
+                    alert("Lütfen zorunlu alanları doldurun.");
+                    return;
+                }
 
-                // 3 saniye sonra butonu eski haline getir
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '#0088cc';
-                    btn.disabled = false;
-                }, 3000);
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!emailRegex.test(email)){
+                    e.preventDefault(); // Yalnızca hatalıysa formu durdur
+                    alert("Geçerli bir e-posta adresi giriniz.");
+                    return;
+                }
 
-            }, 1500);
+                // Bilgiler doğruysa e.preventDefault() çağrılmaz ve form contact.php dosyasına otomatik gönderilir.
+            });
         }
-    </script>
 
+        /*==========================================
+                    CONTACT FAQ
+        ==========================================*/
+
+        const contactFaqItems = document.querySelectorAll(".contact-faq-item");
+
+        contactFaqItems.forEach(item => {
+            const question = item.querySelector(".contact-faq-question");
+
+            question.addEventListener("click", () => {
+                contactFaqItems.forEach(faq => {
+                    if(faq !== item){
+                        faq.classList.remove("active");
+                    }
+                });
+                item.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>

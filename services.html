@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Woody Digital</title>
+    <meta name="description" content="SEO, Web Tasarım, Google Ads, Sosyal Medya Yönetimi, Branding ve Yazılım Geliştirme hizmetlerimizi keşfedin.">
+    <meta name="keywords" content="SEO Ajansı, Web Tasarım, Google Ads, Sosyal Medya, Branding">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.woodydigital.com/services">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+                                                  /*=========================================
+            TOP BAR STYLES (YENİ)
+=========================================*/
+.topbar{
+
+background:#0f172a;
+
+color:#fff;
+
+font-size:14px;
+
+}
+
+.topbar .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+height:48px;
+
+}
+
+.topbar__left{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.topbar__left a{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+opacity:.9;
+
+transition:.3s;
+
+}
+
+.topbar__left a:hover{
+
+opacity:1;
+
+color:#f7fcff;
+
+}
+
+.topbar__right{
+
+display:flex;
+
+gap:18px;
+
+}
+
+.topbar__right a{
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.topbar__right a:hover{
+
+color:#ffffff;
+
+transform:translateY(-3px);
+
+}
+        /*=========================================
+                    GLOBAL STYLES
+        =========================================*/
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f8fbff;
+            color: #091124;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body, h1, h2, h3, p, a, span, button {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /*=========================================
+                    HEADER & MENÜ STYLES
+        =========================================*/
+        .header {
+            background: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px !important;
+            font-weight: 800 !important; 
+            color: #2b66ff !important;
+            text-decoration: none !important;
+            letter-spacing: -1.5px !important;
+            line-height: 1 !important;
+            position: relative;
+            z-index: 1010;
+        }
+
+        .logo span {
+            color: #091124 !important;
+            font-weight: 800 !important; 
+        }
+
+        .nav {
+            position: relative;
+            z-index: 1010;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav__link {
+            color: #091124;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
+            display: inline-block;
+            cursor: pointer !important;
+            pointer-events: auto !important;
+        }
+
+        .nav__link:hover,
+        .nav__link.active {
+            color: #2b66ff;
+        }
+
+        .nav__link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background: #2b66ff;
+            border-radius: 4px;
+        }
+
+        .header__actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1010;
+        }
+
+        .language {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .language a {
+            color: #091124;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f4f7fe;
+            transition: all 0.3s ease;
+        }
+
+        .language a:first-child, 
+        .language a:hover {
+            background: #eff6ff;
+            color: #2b66ff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #2b66ff !important;
+            color: #fff !important;
+            box-shadow: 0 8px 20px rgba(43, 102, 255, 0.25) !important;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #1a55eb !important;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #091124;
+        }
+
+        /*=========================================
+                    SERVICES HERO STYLES
+        =========================================*/
+        .services-hero {
+            padding: 120px 0 80px 0;
+            text-align: center;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: -15%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(236, 106, 128, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(40px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 106, 128, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(50px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #eff6ff;
+            color: #2b66ff;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(43, 102, 255, 0.04);
+        }
+
+        .services-hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #091124;
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+            letter-spacing: -1px;
+        }
+
+        .services-hero p {
+            font-size: 16px;
+            color: #64748b;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /*=========================================
+                    SERVICES LIST STYLES
+        =========================================*/
+        .services-page {
+            padding: 80px 0 120px 0;
+            background: #f8fbff;
+        }
+
+        .services__wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: #fff;
+            padding: 45px 35px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(9, 17, 36, 0.02);
+            border: 1px solid #f0f4fd;
+            transition: all 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(43, 102, 255, 0.08);
+            border-color: #eff6ff;
+        }
+
+        .service-box i {
+            font-size: 32px;
+            color: #2b66ff;
+            background: #eff6ff;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .service-box:hover i {
+            background: #2b66ff;
+            color: #fff;
+        }
+
+        .service-box h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #091124;
+            margin-bottom: 15px;
+        }
+
+        .service-box p {
+            font-size: 15px;
+            color: #5c677d;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .service-box a {
+            color: #2b66ff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+
+        .service-box a:hover {
+            gap: 14px;
+            color: #1a55eb;
+        }
+
+        /*==========================================
+                    PROCESS
+        ==========================================*/
+        .process {
+            padding: 130px 0;
+            background: #f8fbff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #091124;
+            margin: 15px 0;
+        }
+
+        .section-header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .process-card {
+            background: white;
+            padding: 45px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: .35s;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, .05);
+            border: 1px solid #eef2f7;
+        }
+
+        .process-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 70px rgba(37, 99, 235, .15);
+        }
+
+        .process-number {
+            position: absolute;
+            right: 30px;
+            top: 25px;
+            font-size: 60px;
+            font-weight: 800;
+            color: #edf2f7;
+        }
+
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .process-icon i {
+            font-size: 34px;
+            color: white;
+        }
+
+        .process-card h3 {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .process-card p {
+            line-height: 1.9;
+            color: #64748b;
+        } 
+
+        /*==========================================
+                        FAQ
+        ==========================================*/
+        .faq {
+            padding: 130px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 70px auto 0;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid #eef2f7;
+            border-radius: 22px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: .35s;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, .05);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 25px 50px rgba(37, 99, 235, .10);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 28px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .faq-question i {
+            font-size: 28px;
+            transition: .35s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 35px 30px;
+            line-height: 1.9;
+            color: #64748b;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+            color: #2563eb;
+        }
+
+        /*==========================================
+                        SERVICES CTA
+        ==========================================*/
+        .services-cta {
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #8a1e1e 50%, #2563eb 100%);
+            color: white;
+            text-align: center;
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+        }
+
+        .services-cta__content {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-cta h2 {
+            font-size: 64px;
+            line-height: 1.15;
+            margin: 25px 0;
+        }
+
+        .services-cta p {
+            font-size: 20px;
+            line-height: 1.9;
+            opacity: .9;
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 45px;
+        }
+
+        .services-cta__buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .services-cta .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .services-cta .btn-outline:hover {
+            background: white;
+            color: #2563eb;
+        }
+
+        .cta-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .30;
+        }
+
+        .circle-1 {
+            width: 420px;
+            height: 420px;
+            background: #38bdf8;
+            top: -150px;
+            left: -120px;
+        }
+
+        .circle-2 {
+            width: 420px;
+            height: 420px;
+            background: #60a5fa;
+            bottom: -150px;
+            right: -120px;
+        } 
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .nav__menu, .language, .header__actions .btn { display: none; }
+            .menu-toggle { display: block; }
+            .services-hero h1 { font-size: 38px; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero { padding: 100px 0 60px; }
+            .services__wrapper, .process-grid { grid-template-columns: 1fr; }
+            .services-hero h1 { font-size: 32px; }
+            .process { padding: 80px 0; }
+            .services-cta { padding: 90px 0; }
+            .services-cta h2 { font-size: 40px; }
+            .services-cta p { font-size: 18px; }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+
+                                                  <!-- ÜST BİLGİ BARİ (Topbar) -->
+   <div class="topbar">
+        <div class="container">
+            <div class="topbar__info">
+                <a href="tel:+905555555555"><i class="ri-phone-fill"></i> +90 (555) 555 55 55</a>
+                <a href="mailto:info@woodydigital.com"><i class="ri-mail-fill"></i> info@woodydigital.com</a>
+            </div>
+            <div class="topbar__socials">
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-facebook-box-line"></i></a>
+                <a href="#"><i class="ri-linkedin-box-line"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--==========================================
+                HEADER (NAVİGASYON)
+    ===========================================-->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <span>Woody</span>Digital
+            </a>
+            <nav class="nav">
+                <ul class="nav__menu">
+                    <li><a href="index.html" class="nav__link">Ana Sayfa</a></li>
+                    <li><a href="about.html" class="nav__link">Hakkımızda</a></li>
+                    <li><a href="services.html" class="nav__link active">Hizmetler</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <div class="language">
+                    <a href="/">TR</a>
+                    <a href="/en/">EN</a>
+                    <a href="/ru/">RU</a>
+                    <a href="/ar/">AR</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Ücretsiz Teklif Al</a>
+                <button class="menu-toggle" aria-label="Menüyü Aç">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="services-hero">
+            <div class="container">
+                <span class="section-tag">Hizmetlerimiz🧑🏼‍💻</span>
+                <h1>Dijitalde Büyümeniz İçin İhtiyacınız Olan Tüm Çözümler</h1>
+                <p>SEO'dan Web Tasarıma, Google Ads'ten Sosyal Medya Yönetimine kadar işletmenizin dijital başarısını artıracak profesyonel hizmetler sunuyoruz.</p>
+            </div>
+        </section>
+
+        <!-- SERVICES LIST -->
+        <section class="services-page">
+            <div class="container">
+                <div class="services__wrapper">
+                    
+                    <article class="service-box">
+                        <i class="ri-line-chart-line"></i>
+                        <h3>SEO Optimizasyonu</h3>
+                        <p>Google'da üst sıralara çıkmanız için teknik SEO, içerik optimizasyonu, anahtar kelime analizi ve backlink stratejileri geliştiriyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article>
+
+                    <article class="service-box">
+                        <i class="ri-code-s-slash-line"></i>
+                        <h3>Web Tasarım</h3>
+                        <p>Modern, mobil uyumlu, yüksek dönüşüm sağlayan kurumsal web siteleri tasarlıyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article>
+
+                    <article class="service-box">
+                        <i class="ri-google-line"></i>
+                        <h3>Google Ads</h3>
+                        <p>Reklam bütçenizi en verimli şekilde kullanarak maksimum dönüşüm elde etmenizi sağlıyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article>
+
+                    <article class="service-box">
+                        <i class="ri-instagram-line"></i>
+                        <h3>Sosyal Medya</h3>
+                        <p>Instagram, Facebook, LinkedIn ve TikTok hesaplarınızı profesyonel yönetiyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article>
+
+                    <article class="service-box">
+                        <i class="ri-palette-line"></i>
+                        <h3>Branding</h3>
+                        <p>Markanız için logo, kurumsal kimlik, renk sistemi ve marka stratejisi oluşturuyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article> 
+
+                    <article class="service-box">
+                        <i class="ri-terminal-box-line"></i>
+                        <h3>Yazılım Geliştirme</h3>
+                        <p>Kurumsal yazılım, web uygulamaları, e-ticaret ve otomasyon çözümleri geliştiriyoruz.</p>
+                        <a href="service-detail.html">Detayları İncele <i class="ri-arrow-right-line"></i></a>
+                    </article> 
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Çalışma Sürecimiz</span>
+                    <h2>Dijital Başarıya Giden Yol Haritamız</h2>
+                    <p>Her projede aynı disiplinli çalışma sistemini uyguluyor, markanız için en doğru stratejiyi oluşturuyoruz.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-number">01</div>
+                        <div class="process-icon"><i class="ri-search-eye-line"></i></div>
+                        <h3>Analiz</h3>
+                        <p>Rakip analizi, sektör araştırması ve hedef kitlenizi detaylı şekilde inceliyoruz.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">02</div>
+                        <div class="process-icon"><i class="ri-lightbulb-flash-line"></i></div>
+                        <h3>Strateji</h3>
+                        <p>İşletmenize özel dijital pazarlama yol haritasını oluşturuyoruz.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">03</div>
+                        <div class="process-icon"><i class="ri-palette-line"></i></div>
+                        <h3>Tasarım</h3>
+                        <p>Modern kullanıcı deneyimi ve güçlü marka kimliği tasarlıyoruz.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">04</div>
+                        <div class="process-icon"><i class="ri-code-box-line"></i></div>
+                        <h3>Geliştirme</h3>
+                        <p>SEO uyumlu ve yüksek performanslı yazılım çözümleri geliştiriyoruz.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">05</div>
+                        <div class="process-icon"><i class="ri-rocket-2-line"></i></div>
+                        <h3>Yayına Alma</h3>
+                        <p>Tüm testleri tamamlayıp projeyi canlı ortama güvenle taşıyoruz.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">06</div>
+                        <div class="process-icon"><i class="ri-customer-service-2-line"></i></div>
+                        <h3>Destek</h3>
+                        <p>Yayın sonrasında bakım, geliştirme ve sürekli optimizasyon desteği sağlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Sık Sorulan Sorular</span>
+                    <h2>Merak Ettikleriniz</h2>
+                    <p>Hizmetlerimiz hakkında en çok sorulan soruları sizin için cevapladık.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <button class="faq-question">
+                            SEO çalışması ne kadar sürer?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>SEO uzun vadeli bir süreçtir. İlk sonuçlar genellikle 3-6 ay içerisinde görülmeye başlanır.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Google Ads için minimum bütçe nedir?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sektöre göre değişmekle birlikte aylık en az 10.000 TL reklam bütçesi öneriyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Web sitesi kaç günde tamamlanır?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Projenin kapsamına göre ortalama 3 ile 8 hafta arasında teslim ediyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Yayın sonrası destek veriyor musunuz?
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Evet. Bakım, güncelleme ve teknik destek hizmetlerimiz proje sonrasında da devam eder.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="services-cta">
+            <div class="container">
+                <div class="services-cta__content">
+                    <span class="section-tag">Projenizi Birlikte Başlatalım</span>
+                    <h2>Markanızı Dijitalde Bir Sonraki Seviyeye Taşıyalım</h2>
+                    <p>SEO, Web Tasarım, Google Ads ve Dijital Pazarlama çözümlerimiz ile işletmenizi büyütmeye hazırız. Hemen bizimle iletişime geçin.</p>
+                    <div class="services-cta__buttons">
+                        <a href="contact.html" class="btn btn-primary">Ücretsiz Teklif Al</a>
+                        <a href="portfolio.html" class="btn btn-outline">Portföyümüz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-circle circle-1"></div>
+            <div class="cta-circle circle-2"></div>
+        </section>
+    </main>
+
+    <!-- JS BAĞLANTILARI -->
+    <script src="js/script.js"></script>
+    <script>
+        /*==========================================
+                        FAQ ACCORDION
+        ==========================================*/
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+            question.addEventListener("click", () => {
+                faqItems.forEach(faq => {
+                    if (faq !== item) {
+                        faq.classList.remove("active");
+                    }
+                });
+                item.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
